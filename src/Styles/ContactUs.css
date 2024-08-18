@@ -1,5 +1,91 @@
+
 .contact-us {
-    padding: 2rem;
-    background-color: #ffffff;
-    color: #004d40;
-  }
+  text-align: center;
+  padding: 20px;
+}
+
+.developer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.developer-card {
+  background-color: #f0f4f8;
+  border: 1px solid #004d40;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.developer-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #004d40;
+}
+
+.developer-card p {
+  margin: 5px 0;
+  color: #333333;
+}
+
+.developer-card a {
+  color: #00796b;
+  text-decoration: none;
+}
+
+.developer-card a:hover {
+  text-decoration: underline;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Bug Report Form */
+.bug-report-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.bug-report-form input,
+.bug-report-form textarea {
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #004d40;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.bug-report-form button {
+  background-color: #00796b;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.bug-report-form button:hover {
+  background-color: #004d40;
+}
+
+/* Bug Quote */
+.bug-quote {
+  margin-top: 50px;
+  font-size: 50px;
+  font-weight: 500;
+  color: #004d40;
+  text-align: center;
+}

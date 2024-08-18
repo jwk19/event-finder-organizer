@@ -3,11 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchEvents } from './Api';
 import '../Styles/EventList.css';
+import { useEvent } from '../Hooks/useEventStore';
 
 function EventList({event,setEvent}) {
   const navigate = useNavigate()
-  const [events, setEvents] = useState([]);
+  const {events,setEvents}= useEvent((state)=>({
+    events:state.events,
+    setEvents:state.setEvents
 
+  }))
   useEffect(() => {
     const getEvents = async () => {
       const data = await fetchEvents();

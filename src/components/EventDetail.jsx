@@ -1,8 +1,12 @@
 import '../Styles/EventDetail.css';
+import useAuthStore from './authStore';
 
+function EventDetail({ event }) {
+  console.log(event);
+  
+  // Access the addFavorite function from the Zustand store
+  const addFavorite = useAuthStore((state) => state.addFavorite);
 
-function EventDetail({event}) {
-    console.log(event);
   return (
     <div className="event-detail">
       <h2>{event.name}</h2>
@@ -10,6 +14,7 @@ function EventDetail({event}) {
       <p>{event.dates.start.localDate}</p>
       <p>{event._embedded.venues[0].name}</p>
       <p>{event.info}</p>
+      <button onClick={() => addFavorite(event)}>Add to Favorites</button> 
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import useAuthStore from './authStore';
+import useAuthStore from './authStore';
 import '../Styles/SignUp.css';
 
 function SignUp() {

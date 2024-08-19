@@ -59,4 +59,3 @@ export const fetchEventDetail = async (id) => {
     throw error;
   }
 };
-

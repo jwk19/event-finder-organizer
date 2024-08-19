@@ -1,16 +1,29 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f4f8;
-  }
-  
-  .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .content {
-    flex: 1;
-  }
+/* Ensure the entire HTML and body take up full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make the root container (App) a flex container */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Content should take up all available space */
+.content {
+  flex: 1;
+}
+
+/* Ensure the footer stays at the bottom */
+footer {
+  background-color: #004d40;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,44 +1,64 @@
-import React, { useState } from 'react';
-import useAuthStore from './authStore';
-import '../Styles/Login.css';
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Auth } from '@supabase/auth-ui-react'
+import { ThemeSupa } from '@supabase/auth-ui-shared'
+import supabase from './supabaseClient'
+import { useUser } from './userStore'
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const signIn = useAuthStore((state) => state.signIn);
+const Login = () => {
+  const navigate = useNavigate()
+  const { setUser, setIsLogedIn, isLogedIn } = useUser((state) => ({
+    setUser: state.setUser,
+    isLogedIn: state.isLogedIn,
+    setIsLogedIn: state.setIsLogedIn
+  }))
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await signIn(email, password);
-      alert('Login successful');
-    } catch (error) {
-      alert(error.message);
+  useEffect(() => {
+    // Listen for auth state changes
+    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN') {
+        console.log('User signed in:', session.user)
+        setIsLogedIn(true)
+        setUser(session.user)
+        // Uncomment for navigation upon sign-in
+        navigate('/')
+      } else if (event === 'SIGNED_OUT') {
+        console.log('User signed out')
+        setIsLogedIn(false)
+        // Uncomment for navigation upon sign-out
+        // navigate('/login')
+      } else if (event === 'USER_UPDATED') {
+        console.log('User updated:', session.user)
+        setIsLogedIn(true)
+        setUser(session.user)
+      } else if (event === 'PASSWORD_RECOVERY') {
+        console.log('Password recovery event')
+      }
+    })
+
+    // Cleanup listener on component unmount
+    return () => {
+      authListener?.subscription?.unsubscribe()
     }
-  };
+  }, [setIsLogedIn, setUser, supabase]) // Added dependencies
 
   return (
-    <div className="auth-container">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
+    <Auth
+      supabaseClient={supabase}
+      providers={[]} // Ensure providers array is configured as needed
+      appearance={{
+        theme: ThemeSupa,
+        variables: {
+          default: {
+            colors: {
+              brand: 'green',
+              brandAccent: 'darkred',
+            },
+          },
+        },
+      }}
+    />
+  )
 }
 
-export default Login;
+export default Login

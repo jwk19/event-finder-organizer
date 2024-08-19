@@ -1,0 +1,17 @@
+.events-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.events-container .event-card{
+    width: 300px;
+    margin: 10px;
+    background-color: #004d40;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.events-container .event-card img{
+    height: 200px;
+    width: 100%;
+}

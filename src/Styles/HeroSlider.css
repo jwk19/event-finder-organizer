@@ -32,6 +32,7 @@
     position: relative;
     background-size: cover;
     background-position: center;
+    height: 100%;
   }
   
   .hero-image {
@@ -95,10 +96,13 @@
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
+    z-index: 4;
+    border: none;
+    border-radius: 50%;
   }
-  /* input[name='slider']{
+  input[name='slider']{
     display:none
-  } */
+  }
 
   input[name='slider']:checked+div{
     display:flex;

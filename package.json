@@ -13,14 +13,18 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.45.1",
     "axios": "^1.7.4",
     "bootstrap": "^5.3.3",
     "framer-motion": "^11.3.24",
     "icons": "^1.0.0",
     "react": "^18.3.1",
+    "react-bootstrap-icons": "^1.11.4",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.0",
+    "swiper": "^11.1.9",
     "zustand": "^4.5.5"
   },
   "devDependencies": {

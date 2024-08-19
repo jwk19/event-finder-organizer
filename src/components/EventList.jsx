@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { fetchEvents } from './Api';
 import '../Styles/EventList.css';
 import { useEvent } from '../Hooks/useEventStore';
+import HeroSlider from './HeroSlider';
 
 function EventList({event,setEvent}) {
   const navigate = useNavigate()
@@ -27,6 +28,7 @@ function EventList({event,setEvent}) {
   }
   return (
     <div className="event-list">
+      <HeroSlider/>
       <h2>Upcoming Events</h2>
       <div className="events-container">
         {events.map(event => (

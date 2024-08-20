@@ -119,6 +119,21 @@ This project was developed by a team of four talented software engineers:
 -   **Tony Audo**
 -   **James Kahwai**
 
+
+Trello
+------------
+
+Use the link provided below to join the Trello board for this project.
+
+https://trello.com/invite/b/66b9ed0823d53daebf2c135c/ATTI2a10e205f972a4ad94d13dc36666a2234A15DFE4/event-finder-organizer-web-app
+
+Project Slides
+------------
+
+Use the link provided below to view our project presentation slides.
+
+https://www.canva.com/design/DAGOO63ya24/wWi_u48vhFPxfKLbz2dVXg/edit?utm_content=DAGOO63ya24&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 License
 -------
 
